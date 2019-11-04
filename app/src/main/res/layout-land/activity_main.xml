@@ -7,28 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="right"
-        android:id="@+id/ll">
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="setDarkMode"
 
-            android:text="@string/Night_mode"
-            />
 
-<!--        <SearchView-->
-<!--            android:id="@+id/searchView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            />-->
 
-    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:id="@+id/ll">-->
+<!--&lt;!&ndash;        <Switch&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/switch1"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:onClick="setDarkMode"&ndash;&gt;-->
+
+<!--&lt;!&ndash;            android:text="Dark mode"&ndash;&gt;-->
+<!--&lt;!&ndash;            />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <SearchView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/searchView"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            />&ndash;&gt;-->
+
+<!--    </LinearLayout>-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -99,7 +101,7 @@
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_wb_sunny_black_24dp"
                 android:tint="@color/colorAccent"
-                
+
 
                 />
 
@@ -122,7 +124,10 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,6 +150,9 @@
                 android:text="4" />
 
             <ImageView
+                android:maxWidth="60dp"
+                android:maxHeight="60dp"
+
                 android:tint="@color/colorAccent"
 
                 android:id="@+id/imageView21"
@@ -192,6 +200,7 @@
                 android:text="5" />
 
             <ImageView
+
                 android:tint="@color/colorAccent"
 
                 android:id="@+id/imageView21"
@@ -475,9 +484,8 @@
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:orientation="horizontal"
         android:layout_gravity="right"
-        android:gravity="right"
         >
 
         <LinearLayout
@@ -507,7 +515,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/button_more_detailed" />
+                android:text="Button" />
         </LinearLayout>
 
         <LinearLayout
@@ -535,7 +543,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="setDarkMode"
-                android:text="@string/button_more_detailed" />
+                android:text="Button" />
         </LinearLayout>
 
         <LinearLayout
@@ -563,7 +571,7 @@
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_more_detailed" />
+                android:text="Button" />
         </LinearLayout>
 
         <LinearLayout
@@ -591,9 +599,10 @@
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/button_more_detailed" />
+                android:text="Button" />
 
         </LinearLayout>
     </LinearLayout>
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
