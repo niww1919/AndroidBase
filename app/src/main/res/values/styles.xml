@@ -14,14 +14,14 @@
 
     </style>
 
-<!--    <style name="AppDarkTheme" parent="Theme.AppCompat.DayNight.NoActionBar">-->
-<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <style name="AppDarkTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
 <!--        <item name="colorPrimary">@color/colorPrimaryDark1</item>-->
 <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark1</item>-->
 <!--        <item name="colorAccent">@color/colorAccent1</item>-->
 <!--        <item name="android:textColor">@color/colorText1</item>-->
-<!--        <item name="android:windowBackground">@color/backGround1</item>-->
-<!--    </style>-->
+        <item name="android:windowBackground">@color/backGround1</item>
+    </style>
 
 
 
