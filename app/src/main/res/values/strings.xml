@@ -16,4 +16,7 @@
     <string name="now">Now</string>
     <string name="Night_mode">Night mode</string>
     <string name="button_more_detailed">More detailed</string>
+    <string name="country">country</string>
+    <string name="go_to_country_without_visa">Go to country without visa</string>
+    <string name="settings">Settings</string>
 </resources>

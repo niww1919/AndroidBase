@@ -4,12 +4,12 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#bbdefb</color>
     <color name="colorText">#000000</color>
-    <color name="backGround">#FFFFFF</color>
+<!--    <color name="backGround">#fffff</color>-->
 
     <color name="colorPrimary1">#8aacc8</color>
     <color name="colorPrimaryDark1">#283593</color>
-    <color name="colorAccent1">#1565C0</color>
+    <color name="colorAccent1">#000000</color>
     <color name="colorText1">#000000</color>
-    <color name="backGround1">#00838F</color>
+<!--    <color name="backGround1">#00838F</color>-->
 
 </resources>

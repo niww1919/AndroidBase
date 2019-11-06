@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,6 +15,14 @@
         android:orientation="horizontal"
         android:gravity="right"
         android:id="@+id/ll">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go_to_country_without_visa"
+            android:onClick="intentListOfCountry"
+            />
+
         <Switch
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
@@ -21,6 +31,9 @@
 
             android:text="@string/Night_mode"
             />
+
+
+
 
 <!--        <SearchView-->
 <!--            android:id="@+id/searchView"-->
