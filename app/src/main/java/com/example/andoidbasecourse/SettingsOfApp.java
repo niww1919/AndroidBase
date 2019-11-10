@@ -17,6 +17,7 @@ public class SettingsOfApp extends AppCompatActivity {
     Switch aSwitch;
 
 
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,13 @@ public class SettingsOfApp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_of_app);
         aSwitch = findViewById(R.id.switch1);
+
+        findViewById(R.id.buttonBackOfSettings).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
     public void setDarkModeInSettings(View view) {
@@ -71,6 +79,12 @@ public class SettingsOfApp extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
+
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
 
     }
 }
