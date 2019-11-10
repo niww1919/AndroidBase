@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SettingsOfApp extends AppCompatActivity {
     TextView textView;
@@ -23,7 +24,7 @@ public class SettingsOfApp extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_of_app);
-//        aSwitch = findViewById(R.id.switch1);
+        aSwitch = findViewById(R.id.switch1);
 
     }
     public void setDarkModeInSettings(View view) {
@@ -37,7 +38,39 @@ public class SettingsOfApp extends AppCompatActivity {
         }
 //        MainActivity.this.setTheme(R.style.AppDarkTheme);
 //        MainActivity.this.recreate();
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
+
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
+
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
 
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
+
+    }
 }
