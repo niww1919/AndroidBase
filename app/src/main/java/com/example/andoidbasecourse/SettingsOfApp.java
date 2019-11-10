@@ -23,18 +23,12 @@ public class SettingsOfApp extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_of_app);
-        aSwitch = findViewById(R.id.switch1);
+//        aSwitch = findViewById(R.id.switch1);
 
     }
     public void setDarkModeInSettings(View view) {
 
 //            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-//        super.setTheme(R.style.AppDarkTheme);
-
-//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//        setTheme(R.style.AppDarkTheme);
-//        MainActivity.this.recreate();
         if (aSwitch.isChecked()) {
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
