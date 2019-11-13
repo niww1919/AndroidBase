@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Switch;
@@ -33,6 +34,21 @@ public class SettingsOfApp extends AppCompatActivity {
                 finish();
             }
         });
+
+        findViewById(R.id.switch1).setClickable(WetherSettingsModel.getInstance().isShow2());
+        findViewById(R.id.radioButton).setClickable(true);
+//        findViewById(R.id.checkBox).setActivated(WetherSettingsModel.getInstance().show1);
+//        findViewById(R.id.checkBox).setEnabled(WetherSettingsModel.getInstance().show1);
+//        findViewById(R.id.checkBox2).setPressed(WetherSettingsModel.getInstance().show1);
+        ((CheckBox)findViewById(R.id.checkBox3)).setChecked(WetherSettingsModel.getInstance().show1);//todo почему нужно кастить чтобы был метод setChecked
+
+        findViewById(R.id.checkBox2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                WetherSettingsModel.getInstance().setShow1(findViewById();
+            }
+        });
+
 
     }
     public void setDarkModeInSettings(View view) {

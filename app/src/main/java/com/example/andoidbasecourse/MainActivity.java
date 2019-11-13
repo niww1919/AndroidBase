@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        (TextView)findViewById(R.id.editText).setTextDirection(WetherSettings.getCityName().);
+        ((TextView)findViewById(R.id.textView)).setText(WetherSettingsModel.getInstance().getCityName());
 
 //        aSwitch = findViewById(R.id.switch1);
 

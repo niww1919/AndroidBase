@@ -48,5 +48,8 @@
 
     </style>
 
+    <style name="styleOfListCity">list_of_city
+        <item name="android:background">@drawable/gradient</item>
+    </style>
 
 </resources>

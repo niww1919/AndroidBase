@@ -137,7 +137,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                style="@style/styleOfListCity"
+
+                >
 
                 <TextView
                     android:id="@+id/textView13"
@@ -184,7 +187,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                style="@style/styleOfListCity"
+
+                >
 
                 <TextView
                     android:id="@+id/textView13"
@@ -479,7 +485,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            style="@style/styleOfListCity"
+            >
 
             <TextView
                 style="@style/styleOfListTV"
@@ -511,7 +519,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            style="@style/styleOfListCity"
+
+            >
 
             <TextView
                 style="@style/styleOfListTV"
@@ -544,7 +555,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            style="@style/styleOfListCity"
+
+            >
 
             <TextView
                 style="@style/styleOfListTV"
