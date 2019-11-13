@@ -1,20 +1,25 @@
 package com.example.andoidbasecourse;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class SettingsOfApp extends AppCompatActivity {
+    public static final int RESULT_OK = 1;
     TextView textView;
     ListView listView;
     LinearLayout linearLayout;
     Switch aSwitch;
+    String city ;
+
 
 
 
@@ -30,9 +35,31 @@ public class SettingsOfApp extends AppCompatActivity {
         findViewById(R.id.buttonBackOfSettings).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Intent intent = new Intent();
+//                intent.putExtra()
+                RadioButton radioButton = findViewById(R.id.radioButton2);
+                Intent intentResult = new Intent();
+                intentResult.putExtra("City", radioButton.getText().toString());
+                setResult(RESULT_OK, intentResult);
+
                 finish();
+
+
             }
         });
+
+        findViewById(R.id.radioButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                EditText editText = (EditText) findViewById(R.id.editText3);
+                RadioButton radioButton = findViewById(R.id.radioButton2);
+                Intent intentResult = new Intent();
+                intentResult.putExtra("City", radioButton.getText().toString());
+                setResult(RESULT_OK, intentResult);
+//                finish();
+            }
+        });
+
 
     }
     public void setDarkModeInSettings(View view) {
@@ -49,42 +76,4 @@ public class SettingsOfApp extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
-
-    }
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
-
-    }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
-
-    }
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
-
-    }
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
-
-    }
 }

@@ -1,18 +1,17 @@
 package com.example.andoidbasecourse;
 
 import android.content.Intent;
-import android.nfc.Tag;
+import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public static final int REQUEST_CODE = 7;
     Switch aSwitch;
     public String TAG = "StartActivity";
 
@@ -25,9 +24,33 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        (TextView)findViewById(R.id.editText).setTextDirection(WetherSettings.getCityName().);
 
-//        aSwitch = findViewById(R.id.switch1);
+//        startActivityForResult(new Intent(this, SettingsOfApp.class), REQUEST_CODE);
+
+
+        findViewById(R.id.go_to_browser).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String url = "";
+                Uri url = Uri.parse("https://github.com");
+                Intent openBrowser = new Intent(Intent.ACTION_VIEW, url);
+                startActivity(openBrowser);
+            }
+        });
+
+        findViewById(R.id.create_sms).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String url = "";
+
+                Intent openSms = new Intent(Intent.ACTION_SENDTO);
+
+                openSms.setData(Uri.parse("smsto:"));
+                String smg = "sds";
+                openSms.putExtra("sms_body", smg);
+                startActivity(openSms);
+            }
+        });
 
 
     }
@@ -44,12 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void intentListOfCountry(View view) {
-        Intent intent = new Intent(this,ListOfCountryWithoutVisa.class);
-//        startActivities(intent);
-        startActivity(intent);
-
-    }
 
     public void intentSettingsOfApp(View view) {
         Intent intent = new Intent(this, SettingsOfApp.class);
@@ -58,44 +75,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     @Override
-    protected void onStart() {
-        super.onStart();
-        Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
-
-    }
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
-
-    }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != REQUEST_CODE) {
+            return;
+        }
+        ((TextView)findViewById(R.id.currentCityName)).setText(data.getStringExtra("City" ));
 
     }
 
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
-
-    }
 }

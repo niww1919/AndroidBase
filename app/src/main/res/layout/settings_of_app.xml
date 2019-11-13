@@ -22,60 +22,58 @@
             android:onClick="setDarkModeInSettings"
             />
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:text="Name" />
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <RadioButton
                 android:id="@+id/radioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Moscow" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="London" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="New York" />
 
-            <ToggleButton
-                android:id="@+id/toggleButton"
+            <EditText
+                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ToggleButton" />
+                android:ems="10"
+                android:text="Enter other town" />
+
 
         </RadioGroup>
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/current_temperature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox" />
+            android:text="Current temperature"
+            />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/wind"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox" />
+            android:text="Wind" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/rain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox" />
+            android:text="Rain" />
 
         <Button
             android:id="@+id/buttonBackOfSettings"
