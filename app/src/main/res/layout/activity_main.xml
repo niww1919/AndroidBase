@@ -467,114 +467,114 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <LinearLayout
-        style="@style/styleOfList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+<!--    <LinearLayout-->
+<!--        style="@style/styleOfList"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
 
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Amsterdam" />
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Amsterdam" />-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
 
-                android:text="+10" />
+<!--                android:text="+10" />-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="от 10 тыс" />
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="от 10 тыс" />-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4 часа пути" />
-        </LinearLayout>
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="4 часа пути" />-->
+<!--        </LinearLayout>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Seoul" />
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Seoul" />-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
 
-                android:text="+10" />
+<!--                android:text="+10" />-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="от 10 тыс" />
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="от 10 тыс" />-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10 часов пути" />
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="10 часов пути" />-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hong Kong" />
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Hong Kong" />-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
 
-                android:text="+9" />
+<!--                android:text="+9" />-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="от 10 тыс" />
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="от 10 тыс" />-->
 
-            <TextView
-                style="@style/styleOfListTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12 часов пути" />
+<!--            <TextView-->
+<!--                style="@style/styleOfListTV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="12 часов пути" />-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <!--        <View-->
     <!--            android:layout_width="wrap_content"-->
