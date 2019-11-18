@@ -10,7 +10,6 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SettingsOfApp extends AppCompatActivity {
     public static final int RESULT_OK = 1;
@@ -18,9 +17,7 @@ public class SettingsOfApp extends AppCompatActivity {
     ListView listView;
     LinearLayout linearLayout;
     Switch aSwitch;
-    String city ;
-
-
+    String city;
 
 
     @Override
@@ -32,22 +29,13 @@ public class SettingsOfApp extends AppCompatActivity {
         setContentView(R.layout.settings_of_app);
         aSwitch = findViewById(R.id.switch1);
 
-        findViewById(R.id.buttonBackOfSettings).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent intent = new Intent();
-//                intent.putExtra()
-                RadioButton radioButton = findViewById(R.id.radioButton2);
-                Intent intentResult = new Intent();
-                intentResult.putExtra("City", radioButton.getText().toString());
-                setResult(RESULT_OK, intentResult);
-
-                finish();
+        clickOnBackButton();
+        clickOnRadioButtons();
 
 
-            }
-        });
+    }
 
+    private void clickOnRadioButtons() {
         findViewById(R.id.radioButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,9 +47,19 @@ public class SettingsOfApp extends AppCompatActivity {
 //                finish();
             }
         });
-
-
     }
+
+    private void clickOnBackButton() {
+        findViewById(R.id.buttonBackOfSettings).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                returnResult();
+
+            }
+        });
+    }
+
     public void setDarkModeInSettings(View view) {
 
 //            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -73,6 +71,17 @@ public class SettingsOfApp extends AppCompatActivity {
         }
 //        MainActivity.this.setTheme(R.style.AppDarkTheme);
 //        MainActivity.this.recreate();
+    }
+
+    public void returnResult() {
+
+        RadioButton radioButton = findViewById(R.id.radioButton2);
+        Intent intentResult = new Intent();
+        intentResult.putExtra("City", radioButton.getText().toString());
+        setResult(RESULT_OK, intentResult);
+
+        finish();
+
     }
 
 

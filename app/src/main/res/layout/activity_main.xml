@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -467,35 +466,16 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <LinearLayout
-        style="@style/styleOfList"
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.andoidbasecourse.CurrentWeatherFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        />
 
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="dfdf"/>
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go to browser"
-            android:id="@+id/go_to_browser"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sms"
-            android:id="@+id/create_sms"
-            />
-    </LinearLayout>
-
-<!--    <LinearLayout-->
+    <!--    <LinearLayout-->
 <!--        style="@style/styleOfList"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->

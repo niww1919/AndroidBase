@@ -1,5 +1,6 @@
 package com.example.andoidbasecourse;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.Nullable;
@@ -20,40 +21,41 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//        getDelegate().setLocalNightMode(R.style.AppDarkTheme);
-
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-//        startActivityForResult(new Intent(this, SettingsOfApp.class), REQUEST_CODE);
 
-
-        findViewById(R.id.go_to_browser).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                String url = "";
-                Uri url = Uri.parse("https://github.com");
-                Intent openBrowser = new Intent(Intent.ACTION_VIEW, url);
-                startActivity(openBrowser);
-            }
-        });
-
-        findViewById(R.id.create_sms).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                String url = "";
-
-                Intent openSms = new Intent(Intent.ACTION_SENDTO);
-
-                openSms.setData(Uri.parse("smsto:"));
-                String smg = "sds";
-                openSms.putExtra("sms_body", smg);
-                startActivity(openSms);
-            }
-        });
+//        onClickButton();
 
 
     }
+
+//    private void onClickButton() {
+//        findViewById(R.id.go_to_browser).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                String url = "";
+//                Uri url = Uri.parse("https://github.com");
+//                Intent openBrowser = new Intent(Intent.ACTION_VIEW, url);
+//                startActivity(openBrowser);
+//            }
+//        });
+//
+//        findViewById(R.id.create_sms).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                String url = "";
+//
+//                Intent openSms = new Intent(Intent.ACTION_SENDTO);
+//
+//                openSms.setData(Uri.parse("smsto:"));
+//                String smg = "sds";
+//                openSms.putExtra("sms_body", smg);
+//                startActivity(openSms);
+//            }
+//        });
+//    }
 
     public void setDarkMode(View view) {
         if (aSwitch.isChecked()) {
@@ -79,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode != REQUEST_CODE) {
-            return;
+            return ;
         }
-        ((TextView)findViewById(R.id.currentCityName)).setText(data.getStringExtra("City" ));
+        ((TextView)findViewById(R.id.currentCityName)).setText(data.getStringExtra("City"));
 
     }
 
