@@ -34,9 +34,6 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull WeatherAdapter.ViewHolder viewHolder, int position) {//todo why viewholder type??
         Weather currentWeather = this.weather.get(position);
-//        viewHolder.dayOfWeek.setText(weather.getDayOfWeek());
-//        viewHolder.temperatureOfDay.setText(weather.getTemperatureOfDay());
-//        viewHolder.temperatureOfDay.setText("1");
         viewHolder.dayOfWeek.setText(currentWeather.getDayOfWeek());
         viewHolder.dayOfMonth.setText(currentWeather.getDayOfMonth());
         viewHolder.temperatureOfDay.setText(currentWeather.getTemperatureOfDay());
