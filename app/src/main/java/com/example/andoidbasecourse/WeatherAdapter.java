@@ -37,7 +37,9 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
 //        viewHolder.dayOfWeek.setText(weather.getDayOfWeek());
 //        viewHolder.temperatureOfDay.setText(weather.getTemperatureOfDay());
 //        viewHolder.temperatureOfDay.setText("1");
-        viewHolder.temperatureOfDay.setText(currentWeather.getDayOfWeek());
+        viewHolder.dayOfWeek.setText(currentWeather.getDayOfWeek());
+        viewHolder.dayOfMonth.setText(currentWeather.getDayOfMonth());
+        viewHolder.temperatureOfDay.setText(currentWeather.getTemperatureOfDay());
 
 
 
@@ -52,12 +54,14 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView dayOfWeek;
+        private TextView dayOfMonth;
         private TextView temperatureOfDay;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             dayOfWeek = itemView.findViewById(R.id.dayOfWeek);
             temperatureOfDay = itemView.findViewById(R.id.temperatureOfDay);
+            dayOfMonth = itemView.findViewById(R.id.dayOfMonth);
         }
 
         public TextView getDayOfWeek() {

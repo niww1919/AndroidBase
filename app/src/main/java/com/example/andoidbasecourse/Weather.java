@@ -1,21 +1,21 @@
 package com.example.andoidbasecourse;
 
 public class Weather {
-    int temperatureOfDay;
+    String temperatureOfDay;
     String dayOfWeek;
-    int dayOfMonth;
+    String dayOfMonth;
 
-    public Weather(int temperatureOfDay, String dayOfWeek, int dayOfMonth) {
+    public Weather(String temperatureOfDay, String dayOfWeek, String dayOfMonth) {
         this.temperatureOfDay = temperatureOfDay;
         this.dayOfWeek = dayOfWeek;
         this.dayOfMonth = dayOfMonth;
     }
 
-    public int getTemperatureOfDay() {
+    public String getTemperatureOfDay() {
         return temperatureOfDay;
     }
 
-    public void setTemperatureOfDay(int temperatureOfDay) {
+    public void setTemperatureOfDay(String temperatureOfDay) {
         this.temperatureOfDay = temperatureOfDay;
     }
 
@@ -27,11 +27,11 @@ public class Weather {
         this.dayOfWeek = dayOfWeek;
     }
 
-    public int getDayOfMonth() {
+    public String getDayOfMonth() {
         return dayOfMonth;
     }
 
-    public void setDayOfMonth(int dayOfMonth) {
+    public void setDayOfMonth(String dayOfMonth) {
         this.dayOfMonth = dayOfMonth;
     }
 }

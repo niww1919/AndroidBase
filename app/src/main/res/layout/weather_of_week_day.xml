@@ -11,21 +11,17 @@
         android:layout_height="wrap_content"
 
         >
-        <ImageView
-            android:id="@+id/imageOfWeather"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            tools:background="@color/colorAccent"
-            android:layout_margin="10dp"
-
-            />
         <TextView
             android:id="@+id/dayOfWeek"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:background="@color/colorAccent"
 
             />
+        <TextView
+            android:id="@+id/dayOfMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/temperatureOfDay"
             android:layout_width="wrap_content"
