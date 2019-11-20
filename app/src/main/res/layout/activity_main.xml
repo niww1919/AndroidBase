@@ -96,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="@string/temperature"
+                    android:text="@string/temperatureOfDay"
                     android:textSize="40dp" />
 
             </LinearLayout>
@@ -475,121 +475,19 @@
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
         />
 
-    <!--    <LinearLayout-->
-<!--        style="@style/styleOfList"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Amsterdam" />-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-
-<!--                android:text="+10" />-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="от 10 тыс" />-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="4 часа пути" />-->
-<!--        </LinearLayout>-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Seoul" />-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-
-<!--                android:text="+10" />-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="от 10 тыс" />-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="10 часов пути" />-->
-
-<!--        </LinearLayout>-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Hong Kong" />-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-
-<!--                android:text="+9" />-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="от 10 тыс" />-->
-
-<!--            <TextView-->
-<!--                style="@style/styleOfListTV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="12 часов пути" />-->
-
-<!--        </LinearLayout>-->
+    <android.support.v7.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@+id/fragment"
+        android:id="@+id/rv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        >
 
 
-<!--    </LinearLayout>-->
+    </android.support.v7.widget.RecyclerView>
 
-    <!--        <View-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            tools:listitem="@layout/list_of_contry"-->
 
-    <!--            />-->
+
 
 
 </android.support.constraint.ConstraintLayout>

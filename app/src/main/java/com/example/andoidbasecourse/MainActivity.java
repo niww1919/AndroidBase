@@ -1,15 +1,18 @@
 package com.example.andoidbasecourse;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_CODE = 7;
@@ -20,42 +23,28 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
 
+        List<Weather> weatherOFWeekDays = new ArrayList<>();
+        weatherOFWeekDays.add(new Weather(10, "Monday", 5));
+        weatherOFWeekDays.add(new Weather(3, "Tuasday", 6));
+        weatherOFWeekDays.add(new Weather(-23, "Friday", 10));
 
-//        onClickButton();
+        RecyclerView recyclerView = findViewById(R.id.rv);
+        recyclerView.setHasFixedSize(true);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        WeatherAdapter adapter = new WeatherAdapter(this, weatherOFWeekDays);
+        recyclerView.setAdapter(adapter);
+
 
 
     }
 
-//    private void onClickButton() {
-//        findViewById(R.id.go_to_browser).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                String url = "";
-//                Uri url = Uri.parse("https://github.com");
-//                Intent openBrowser = new Intent(Intent.ACTION_VIEW, url);
-//                startActivity(openBrowser);
-//            }
-//        });
-//
-//        findViewById(R.id.create_sms).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                String url = "";
-//
-//                Intent openSms = new Intent(Intent.ACTION_SENDTO);
-//
-//                openSms.setData(Uri.parse("smsto:"));
-//                String smg = "sds";
-//                openSms.putExtra("sms_body", smg);
-//                startActivity(openSms);
-//            }
-//        });
-//    }
 
     public void setDarkMode(View view) {
         if (aSwitch.isChecked()) {
