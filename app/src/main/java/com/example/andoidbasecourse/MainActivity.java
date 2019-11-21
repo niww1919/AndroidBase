@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         List<Weather> weatherOFWeekDays = new ArrayList<>();
-        weatherOFWeekDays.add(new Weather("10", "Monday", "30"));
-        weatherOFWeekDays.add(new Weather("3", "Tuesday", "6"));
-        weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
-        weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
-        weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
-        weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
-        weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
+        weatherOFWeekDays.add(new Weather("+10", "Monday", "1"));
+        weatherOFWeekDays.add(new Weather("+5", "Tuesday", "2"));
+        weatherOFWeekDays.add(new Weather("+3", "Wednesday", "3"));
+        weatherOFWeekDays.add(new Weather("+6", "Thursday", "4"));
+        weatherOFWeekDays.add(new Weather("+1", "Friday", "5"));
+        weatherOFWeekDays.add(new Weather("-1", "Saturday", "6"));
+        weatherOFWeekDays.add(new Weather("0", "Sunday", "7"));
 
         RecyclerView recyclerView = findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
