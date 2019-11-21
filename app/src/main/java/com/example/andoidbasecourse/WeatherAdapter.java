@@ -1,11 +1,14 @@
 package com.example.andoidbasecourse;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -37,6 +40,9 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
         viewHolder.dayOfWeek.setText(currentWeather.getDayOfWeek());
         viewHolder.dayOfMonth.setText(currentWeather.getDayOfMonth());
         viewHolder.temperatureOfDay.setText(currentWeather.getTemperatureOfDay());
+        viewHolder.imageViewOfDay.setImageResource(R.drawable.ic_filter_drama_black_24dp);
+//        viewHolder.imageViewOfDay.setImageURI(Uri.parse(String.valueOf(R.drawable.ic_beach_access_black_24dp)));
+
 
 
 
@@ -53,20 +59,30 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
         private TextView dayOfWeek;
         private TextView dayOfMonth;
         private TextView temperatureOfDay;
+        private ImageView imageViewOfDay;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             dayOfWeek = itemView.findViewById(R.id.dayOfWeek);
             temperatureOfDay = itemView.findViewById(R.id.temperatureOfDay);
             dayOfMonth = itemView.findViewById(R.id.dayOfMonth);
+            imageViewOfDay = itemView.findViewById(R.id.imageViewOfDay);
         }
 
         public TextView getDayOfWeek() {
             return dayOfWeek;
         }
 
+        public TextView getDayOfMonth() {
+            return dayOfMonth;
+        }
+
         public TextView getTemperatureOfDay() {
             return temperatureOfDay;
+        }
+
+        public ImageView getImageViewOfDay() {
+            return imageViewOfDay;
         }
     }
 }

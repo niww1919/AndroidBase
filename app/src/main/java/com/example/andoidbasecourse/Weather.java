@@ -1,9 +1,12 @@
 package com.example.andoidbasecourse;
 
+import android.widget.ImageView;
+
 public class Weather {
     String temperatureOfDay;
     String dayOfWeek;
     String dayOfMonth;
+//    ImageView imageViewOfDay;
 
     public Weather(String temperatureOfDay, String dayOfWeek, String dayOfMonth) {
         this.temperatureOfDay = temperatureOfDay;

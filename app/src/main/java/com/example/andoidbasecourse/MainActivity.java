@@ -32,11 +32,15 @@ public class MainActivity extends AppCompatActivity {
         weatherOFWeekDays.add(new Weather("10", "Monday", "30"));
         weatherOFWeekDays.add(new Weather("3", "Tuesday", "6"));
         weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
+        weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
+        weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
+        weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
+        weatherOFWeekDays.add(new Weather("1", "Friday", "10"));
 
         RecyclerView recyclerView = findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
 
         WeatherAdapter adapter = new WeatherAdapter(this, weatherOFWeekDays);
         recyclerView.setAdapter(adapter);
