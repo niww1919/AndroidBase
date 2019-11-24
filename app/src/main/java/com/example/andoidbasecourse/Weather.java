@@ -1,12 +1,21 @@
 package com.example.andoidbasecourse;
 
-import android.widget.ImageView;
+import java.util.Date;
 
 public class Weather {
     String temperatureOfDay;
     String dayOfWeek;
     String dayOfMonth;
-//    ImageView imageViewOfDay;
+    String cityName;
+    Date timeInCity;
+
+    public Weather(String temperatureOfDay, String cityName, Date timeInCity) {
+        this.temperatureOfDay = temperatureOfDay;
+        this.cityName = cityName;
+        this.timeInCity = timeInCity;
+    }
+
+    //    ImageView imageViewOfDay;
 
     public Weather(String temperatureOfDay, String dayOfWeek, String dayOfMonth) {
         this.temperatureOfDay = temperatureOfDay;
@@ -36,5 +45,21 @@ public class Weather {
 
     public void setDayOfMonth(String dayOfMonth) {
         this.dayOfMonth = dayOfMonth;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getTimeInCity() {
+        return timeInCity.toString().substring(0,16);
+    }
+
+    public void setTimeInCity(Date timeInCity) {
+        this.timeInCity = timeInCity;
     }
 }

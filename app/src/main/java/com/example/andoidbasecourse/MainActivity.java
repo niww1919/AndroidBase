@@ -9,10 +9,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
@@ -21,8 +23,6 @@ public class MainActivity extends BaseActivity {
     public static final int REQUEST_CODE = 7;
     Switch aSwitch;
     public String TAG = "StartActivity";
-    private static final String NameSharedPreference = "LOGIN";
-    private static final String IsDarkTheme = "IsDarkTheme";
 
 
     @Override
@@ -42,13 +42,27 @@ public class MainActivity extends BaseActivity {
         weatherOFWeekDays.add(new Weather("-1", "Saturday", "6"));
         weatherOFWeekDays.add(new Weather("0", "Sunday", "7"));
 
+        List<Weather> weatherOfCity = new ArrayList<>();
+        weatherOfCity.add(new Weather("+23", "London", new Date(System.currentTimeMillis())));
+        weatherOfCity.add(new Weather("+5", "Moscow", new Date(System.currentTimeMillis())));
+        weatherOfCity.add(new Weather("+9", "London", new Date(System.currentTimeMillis())));
+
+
+
+
         RecyclerView recyclerView = findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
-
         WeatherAdapter adapter = new WeatherAdapter(this, weatherOFWeekDays);
         recyclerView.setAdapter(adapter);
+
+
+
+        WeatherOfCityAdapter adapter2 = new WeatherOfCityAdapter(this, weatherOfCity);
+        RecyclerView rv = findViewById(R.id.listOfCities);
+        rv.setHasFixedSize(true);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setAdapter(adapter2);
 
 
 
