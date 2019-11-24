@@ -74,6 +74,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/wetness" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sort by"
+            />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/current_temperature"
+            />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/path" />
 
         <Button
             android:id="@+id/buttonBackOfSettings"
@@ -83,6 +98,8 @@
             android:text="@string/back"
 
             />
+
+
 
     </LinearLayout>
 
