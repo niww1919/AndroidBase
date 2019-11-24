@@ -30,4 +30,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sity">Sity</string>
     <string name="path">Path</string>
+    <string name="time">Time</string>
 </resources>
