@@ -7,9 +7,11 @@
     tools:context=".FragmentListOfCity">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+
 
         android:orientation="horizontal"
 
@@ -25,7 +27,7 @@
             style="@style/styleOfListTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/now_temperature" />
+            android:text="@string/temperature" />
 
         <TextView
             style="@style/styleOfListTV"
@@ -61,6 +63,6 @@
 <!--            android:layout_gravity="center"-->
 
 <!--            />-->
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </FrameLayout>

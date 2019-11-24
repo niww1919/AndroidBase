@@ -3,21 +3,22 @@ package com.example.andoidbasecourse;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
-import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 
-public class SettingsOfApp extends AppCompatActivity {
+public class SettingsOfApp extends BaseActivity {
     public static final int RESULT_OK = 1;
     TextView textView;
     ListView listView;
     LinearLayout linearLayout;
-    Switch aSwitch;
+    SwitchCompat aSwitchSetDarkTheme;
     String city;
 
 
@@ -28,7 +29,18 @@ public class SettingsOfApp extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_of_app);
-        aSwitch = findViewById(R.id.switch1);
+
+        aSwitchSetDarkTheme = findViewById(R.id.switch1);
+        aSwitchSetDarkTheme.setChecked(isDarkTheme());
+        aSwitchSetDarkTheme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                setDarkTheme(isChecked);
+                recreate();
+            }
+        });
+
+
 
         clickOnBackButton();
         clickOnRadioButtons();
@@ -56,22 +68,26 @@ public class SettingsOfApp extends AppCompatActivity {
 
                 returnResult();
 
+
             }
         });
     }
+    /**
+     * Set Dark theme
+     */
 
-    public void setDarkModeInSettings(View view) {
-
+//    public void setDarkModeInSettings(View view) {
+//
+////            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//        if (aSwitchSetDarkTheme.isChecked()) {
 //            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        if (aSwitch.isChecked()) {
-            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-
-            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
-//        MainActivity.this.setTheme(R.style.AppDarkTheme);
-//        MainActivity.this.recreate();
-    }
+//        } else {
+//
+//            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//        }
+////        MainActivity.this.setTheme(R.style.AppDarkTheme);
+////        MainActivity.this.recreate();
+//    }
 
     public void returnResult() {
 
@@ -83,6 +99,5 @@ public class SettingsOfApp extends AppCompatActivity {
         finish();
 
     }
-
 
 }

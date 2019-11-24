@@ -22,7 +22,7 @@
     <string name="sing">!</string>
     <string name="back">Back</string>
     <string name="current_temperature">Temperature</string>
-    <string name="now_temperature">Temperature now</string>
+    <string name="temperature">Temperature</string>
     <string name="wind">Wind</string>
     <string name="wetness">Wetness</string>
 
