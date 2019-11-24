@@ -7,6 +7,7 @@
     <item name="colorPrimary" type="color">@color/colorPrimaryDark1</item>
     <item name="colorPrimaryDark" type="color">@color/colorPrimaryDark1</item>
     <item name="colorAccent" type="color">@color/colorAccent1</item>
+<!--    <item name="backGround" type="color"> </item>-->
 <!--    <item name="" type=""-->
 <!--    <item name="windowBackground" type="color">@drawable/gradient</item>-->
 

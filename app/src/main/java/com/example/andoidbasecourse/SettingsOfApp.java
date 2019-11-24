@@ -2,14 +2,15 @@ package com.example.andoidbasecourse;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class SettingsOfApp extends AppCompatActivity {
     public static final int RESULT_OK = 1;
@@ -39,7 +40,6 @@ public class SettingsOfApp extends AppCompatActivity {
         findViewById(R.id.radioButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                EditText editText = (EditText) findViewById(R.id.editText3);
                 RadioButton radioButton = findViewById(R.id.radioButton2);
                 Intent intentResult = new Intent();
                 intentResult.putExtra("City", radioButton.getText().toString());
