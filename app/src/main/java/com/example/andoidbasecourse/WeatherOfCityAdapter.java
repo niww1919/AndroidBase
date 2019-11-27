@@ -8,16 +8,21 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Date;
+import com.example.andoidbasecourse.json.WeatherModel;
+
 import java.util.List;
 
 public class WeatherOfCityAdapter extends RecyclerView.Adapter<WeatherOfCityAdapter.ViewHolder> {
 
+    public static final String TAG = "WEATHER";
+    public static final String WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?q=Moscow,RU&appid=";
+    public static final String WEATHER_API_KEY = "e83d0265c9865659af525e50e89b8edd";
+
     private LayoutInflater inflater;
-    private List<Weather> weather;
+    private List<WeatherModel> weather;
 //    private ViewHolder viewHolder;
 
-    public WeatherOfCityAdapter(Context context, List<Weather> weather) {
+        public WeatherOfCityAdapter(Context context, List<WeatherModel> weather) {
         this.inflater = LayoutInflater.from(context);
         this.weather = weather;
     }
@@ -34,14 +39,13 @@ public class WeatherOfCityAdapter extends RecyclerView.Adapter<WeatherOfCityAdap
 
     @Override
     public void onBindViewHolder(WeatherOfCityAdapter.ViewHolder viewHolder, int position) {//todo why viewholder type??
-        Weather currentWeather = this.weather.get(position);
-        viewHolder.cityName.setText(currentWeather.getCityName());
-        viewHolder.temperatureOfDay.setText(currentWeather.getTemperatureOfDay());
-        viewHolder.timeInCityName.setText(currentWeather.getTimeInCity());
+        WeatherModel currentWeather = this.weather.get(position);
+
+
+        viewHolder.clouds.setText((CharSequence) currentWeather.getClouds());
+        viewHolder.wind.setText((CharSequence) currentWeather.getWind());
+//        viewHolder.timeInCityName.setText(currentWeather.getTimeInCity());
 //        viewHolder.imageViewOfDay.setImageURI(Uri.parse(String.valueOf(R.drawable.ic_beach_access_black_24dp)));
-
-
-
 
 
     }
@@ -53,23 +57,23 @@ public class WeatherOfCityAdapter extends RecyclerView.Adapter<WeatherOfCityAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-         TextView cityName;
-         TextView timeInCityName;
-         TextView temperatureOfDay;
+        TextView clouds;
+        TextView timeInCityName;
+        TextView wind;
 
-        public ViewHolder(  View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
-            temperatureOfDay = itemView.findViewById(R.id.temperatureOfDay);
-            cityName = itemView.findViewById(R.id.cityName);
+            wind = itemView.findViewById(R.id.temperatureOfDay);
+            clouds = itemView.findViewById(R.id.cityName);
             timeInCityName = itemView.findViewById(R.id.timeInCityName);
         }
 
-        public TextView getCityName() {
-            return cityName;
+        public TextView getClouds() {
+            return clouds;
         }
 
-        public TextView getTemperatureOfDay() {
-            return temperatureOfDay;
+        public TextView getWind() {
+            return wind;
         }
 
     }

@@ -24,6 +24,7 @@
     <string name="current_temperature">Temperature</string>
     <string name="temperature">Temperature</string>
     <string name="wind">Wind</string>
+    <string name="clouds">Clouds</string>
     <string name="wetness">Wetness</string>
 
     <!-- TODO: Remove or change this placeholder text -->

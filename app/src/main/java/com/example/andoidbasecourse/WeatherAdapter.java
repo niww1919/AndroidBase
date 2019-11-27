@@ -1,8 +1,6 @@
 package com.example.andoidbasecourse;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +35,9 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
     @Override
     public void onBindViewHolder(  WeatherAdapter.ViewHolder viewHolder, int position) {//todo why viewholder type??
         Weather currentWeather = this.weather.get(position);
+
+
+
         viewHolder.dayOfWeek.setText(currentWeather.getDayOfWeek());
         viewHolder.dayOfMonth.setText(currentWeather.getDayOfMonth());
         viewHolder.temperatureOfDay.setText(currentWeather.getTemperatureOfDay());

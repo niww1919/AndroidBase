@@ -1,20 +1,17 @@
 package com.example.andoidbasecourse;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.andoidbasecourse.json.WeatherModel;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
@@ -42,10 +39,10 @@ public class MainActivity extends BaseActivity {
         weatherOFWeekDays.add(new Weather("-1", "Saturday", "6"));
         weatherOFWeekDays.add(new Weather("0", "Sunday", "7"));
 
-        List<Weather> weatherOfCity = new ArrayList<>();
-        weatherOfCity.add(new Weather("+23", "London", new Date(System.currentTimeMillis())));
-        weatherOfCity.add(new Weather("+5", "Moscow", new Date(System.currentTimeMillis())));
-        weatherOfCity.add(new Weather("+9", "London", new Date(System.currentTimeMillis())));
+        List<WeatherModel> weatherOfCity = new ArrayList<>();
+//        weatherOfCity.add(new Weather("+23", "London", new Date(System.currentTimeMillis())));
+//        weatherOfCity.add(new Weather("+5", "Moscow", new Date(System.currentTimeMillis())));
+//        weatherOfCity.add(new Weather("+9", "London", new Date(System.currentTimeMillis())));
 
 
 
