@@ -8,12 +8,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
-public class SettingsOfApp extends BaseActivity {
+public class AppSettingsActivity extends BaseActivity {
     public static final int RESULT_OK = 1;
     TextView textView;
     ListView listView;
@@ -25,10 +23,8 @@ public class SettingsOfApp extends BaseActivity {
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
-//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_of_app);
+        setContentView(R.layout.activity_app_settings);
 
         aSwitchSetDarkTheme = findViewById(R.id.switch1);
         aSwitchSetDarkTheme.setChecked(isDarkTheme());
@@ -72,22 +68,6 @@ public class SettingsOfApp extends BaseActivity {
             }
         });
     }
-    /**
-     * Set Dark theme
-     */
-
-//    public void setDarkModeInSettings(View view) {
-//
-////            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//        if (aSwitchSetDarkTheme.isChecked()) {
-//            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//        } else {
-//
-//            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//        }
-////        MainActivity.this.setTheme(R.style.AppDarkTheme);
-////        MainActivity.this.recreate();
-//    }
 
     public void returnResult() {
 

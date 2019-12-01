@@ -46,11 +46,11 @@
 
     </LinearLayout>
 
-    <!--    <include layout="@layout/fragment_of_current_weather" />-->
+    <!--    <include layout="@layout/fragment_weather" />-->
     <fragment
         android:id="@+id/fragmentOfCurrentWeather"
         android:layout_width="match_parent"
-        android:name="com.example.andoidbasecourse.FragmentOfCurrentWeather"
+        android:name="com.example.andoidbasecourse.WeatherFragment"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/ll" />
 
@@ -62,10 +62,5 @@
 
 
         />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listOfCities"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/rv"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

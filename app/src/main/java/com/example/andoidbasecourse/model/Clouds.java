@@ -1,4 +1,4 @@
-package com.example.andoidbasecourse.json;
+package com.example.andoidbasecourse.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -64,10 +64,10 @@
             android:text="Displaying" />
 
         <CheckBox
-            android:id="@+id/time"
+            android:id="@+id/chbDayOfWeek"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/time" />
+            android:text="@string/dayOfWeek" />
 
         <CheckBox
             android:id="@+id/current_temperature"

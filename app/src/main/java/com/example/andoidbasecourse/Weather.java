@@ -9,12 +9,6 @@ public class Weather {
     String cityName;
     Date timeInCity;
 
-    public Weather(String temperatureOfDay, String cityName, Date timeInCity) {
-        this.temperatureOfDay = temperatureOfDay;
-        this.cityName = cityName;
-        this.timeInCity = timeInCity;
-    }
-
     //    ImageView imageViewOfDay;
 
     public Weather(String temperatureOfDay, String dayOfWeek, String dayOfMonth) {

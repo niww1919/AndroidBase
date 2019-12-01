@@ -13,8 +13,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.andoidbasecourse.json.WeatherModel;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +30,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
         setSupportActionBar(toolbar);
@@ -46,11 +45,6 @@ public class MainActivity extends BaseActivity {
         weatherOFWeekDays.add(new Weather("-1", "Saturday", "6"));
         weatherOFWeekDays.add(new Weather("0", "Sunday", "7"));
 
-        List<WeatherModel> weatherOfCity = new ArrayList<>();
-//        weatherOfCity.add(new Weather("+23", "London", new Date(System.currentTimeMillis())));
-//        weatherOfCity.add(new Weather("+5", "Moscow", new Date(System.currentTimeMillis())));
-//        weatherOfCity.add(new Weather("+9", "London", new Date(System.currentTimeMillis())));
-
 
         RecyclerView recyclerView = findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
@@ -59,17 +53,10 @@ public class MainActivity extends BaseActivity {
         recyclerView.setAdapter(adapter);
 
 
-        WeatherOfCityAdapter adapter2 = new WeatherOfCityAdapter(this, weatherOfCity);
-        RecyclerView rv = findViewById(R.id.listOfCities);
-        rv.setHasFixedSize(true);
-        rv.setLayoutManager(new LinearLayoutManager(this));
-        rv.setAdapter(adapter2);
-
-
     }
 
     public void intentSettingsOfApp(View view) {
-        Intent intent = new Intent(MainActivity.this, SettingsOfApp.class);
+        Intent intent = new Intent(MainActivity.this, AppSettingsActivity.class);
         startActivityForResult(intent, SETTING_CODE);
     }
 
@@ -103,13 +90,22 @@ public class MainActivity extends BaseActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         Button button = findViewById(R.id.activityButtonOfSettings);
+        TextView textView = findViewById(R.id.dayOfWeek);
+
 
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.itemButtonOfSettings) {
             button.setVisibility(View.VISIBLE);
+            item.setChecked(true);
+            return true;
+        }if (id == R.id.action_off_day_of_week) {
+            textView.setVisibility(View.INVISIBLE);
+            item.setChecked(true);
+//            Snackbar.make(, item.getTitle().toString(), Snackbar.LENGTH_LONG);
             return true;
         }
+
 
 
         return super.onOptionsItemSelected(item);

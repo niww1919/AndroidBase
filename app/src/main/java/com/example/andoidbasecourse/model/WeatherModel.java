@@ -1,4 +1,4 @@
-package com.example.andoidbasecourse.json;
+package com.example.andoidbasecourse.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -8,9 +8,9 @@ public class WeatherModel {
 //    @SerializedName("weather")
 //    @Expose
 //    private List<Weather> weather = null;
-//    @SerializedName("main")
-//    @Expose
-//    private Main_ main;
+    @SerializedName("main")
+    @Expose
+    private Main main;
     @SerializedName("wind")
     @Expose
     private Wind wind;
@@ -19,13 +19,13 @@ public class WeatherModel {
     private Clouds clouds;
 
 
-//    public Main_ getMain() {
-//        return main;
-//    }
-//
-//    public void setMain(Main_ main) {
-//        this.main = main;
-//    }
+    public Main getMain() {
+        return main;
+    }
+
+    public void setMain(Main main) {
+        this.main = main;
+    }
 
     public Wind getWind() {
         return wind;
