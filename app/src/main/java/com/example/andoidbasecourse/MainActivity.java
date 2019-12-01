@@ -28,6 +28,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
 
+
         setContentView(R.layout.activity_main);
 
         List<Weather> weatherOFWeekDays = new ArrayList<>();
