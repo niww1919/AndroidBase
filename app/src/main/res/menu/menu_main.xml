@@ -6,11 +6,6 @@
 
     >
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/action_off_day_of_week"
         android:orderInCategory="100"
         android:title="Off Day of week "
@@ -19,10 +14,12 @@
 
         />
     <item
-        android:id="@+id/action_time"
+        android:id="@+id/action_off_pic"
         android:orderInCategory="200"
-        android:title="@string/time"
-        app:showAsAction="never" />
+        android:title="@string/off_pic"
+        app:showAsAction="never"
+        android:checkable="true"
+        />
     <item
         android:id="@+id/itemButtonOfSettings"
         android:orderInCategory="300"

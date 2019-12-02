@@ -6,12 +6,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +27,6 @@ public class MainActivity extends BaseActivity {
     public static final int REQUEST_CODE = 7;
     Switch aSwitch;
     public String TAG = "StartActivity";
-    private AppBarConfiguration mAppBarConfiguration;
 
 
     @Override
@@ -39,8 +39,16 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
         setSupportActionBar(toolbar);
+
         NavigationView navigationView = findViewById(R.id.navigationView);
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
+                drawerLayout,
+                toolbar,
+                R.string.nav_app_bar_navigate_up_description,
+                R.string.nav_app_bar_open_drawer_description);
+//        drawerLayout.addDrawerListener(toggle);
+//        toggle.syncState();
 
 
         List<Weather> weatherOFWeekDays = new ArrayList<>();
@@ -98,21 +106,41 @@ public class MainActivity extends BaseActivity {
         int id = item.getItemId();
         Button button = findViewById(R.id.activityButtonOfSettings);
         TextView textView = findViewById(R.id.dayOfWeek);
-
+        ImageView imageView = findViewById(R.id.imageViewOfDay);
 
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.itemButtonOfSettings) {
-            button.setVisibility(View.VISIBLE);
-            item.setChecked(true);
-            return true;
-        }if (id == R.id.action_off_day_of_week) {
-            textView.setVisibility(View.INVISIBLE);
-            item.setChecked(true);
-//            Snackbar.make(, item.getTitle().toString(), Snackbar.LENGTH_LONG);
+            if (item.isChecked()) {
+                item.setChecked(false);
+                button.setVisibility(View.INVISIBLE);
+            } else {
+                item.setChecked(true);
+                button.setVisibility(View.VISIBLE);
+            }
             return true;
         }
 
+        if (id == R.id.action_off_day_of_week) {
+            if (item.isChecked()) {
+                textView.setVisibility(View.VISIBLE);
+                item.setChecked(false);
+            } else {
+                textView.setVisibility(View.INVISIBLE);
+                item.setChecked(true);
+            }
+
+            return true;
+        }
+        if (id == R.id.action_off_pic) {
+            if (item.isChecked()) {
+                imageView.setVisibility(View.VISIBLE);
+                item.setChecked(false);
+            } else {
+                imageView.setVisibility(View.INVISIBLE);
+                item.setChecked(true);
+            }
+        }
 
 
         return super.onOptionsItemSelected(item);
