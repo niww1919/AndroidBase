@@ -10,8 +10,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +26,7 @@ public class MainActivity extends BaseActivity {
     public static final int REQUEST_CODE = 7;
     Switch aSwitch;
     public String TAG = "StartActivity";
+    private AppBarConfiguration mAppBarConfiguration;
 
 
     @Override
@@ -34,6 +39,8 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
         setSupportActionBar(toolbar);
+        NavigationView navigationView = findViewById(R.id.navigationView);
+        DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
 
 
         List<Weather> weatherOFWeekDays = new ArrayList<>();
