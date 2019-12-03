@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -25,8 +24,6 @@ public class MainActivity extends BaseActivity {
 
     private static final int SETTING_CODE = 88;
     public static final int REQUEST_CODE = 7;
-    Switch aSwitch;
-    public String TAG = "StartActivity";
 
 
     @Override
@@ -34,6 +31,14 @@ public class MainActivity extends BaseActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        findViewById(R.id.buttonStartWeatherSettings).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intentSettingsOfWeather();
+            }
+        });
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -70,8 +75,8 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    public void intentSettingsOfApp(View view) {
-        Intent intent = new Intent(MainActivity.this, AppSettingsActivity.class);
+    public void intentSettingsOfWeather() {
+        Intent intent = new Intent(MainActivity.this, WeatherSettingsActivity.class);
         startActivityForResult(intent, SETTING_CODE);
     }
 
@@ -104,7 +109,7 @@ public class MainActivity extends BaseActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        Button button = findViewById(R.id.activityButtonOfSettings);
+        Button button = findViewById(R.id.buttonStartWeatherSettings);
         TextView textView = findViewById(R.id.dayOfWeek);
         ImageView imageView = findViewById(R.id.imageViewOfDay);
 

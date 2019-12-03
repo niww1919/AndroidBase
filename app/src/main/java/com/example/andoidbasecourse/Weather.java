@@ -11,6 +11,8 @@ public class Weather {
 
     //    ImageView imageViewOfDay;
 
+
+
     public Weather(String temperatureOfDay, String dayOfWeek, String dayOfMonth) {
         this.temperatureOfDay = temperatureOfDay;
         this.dayOfWeek = dayOfWeek;

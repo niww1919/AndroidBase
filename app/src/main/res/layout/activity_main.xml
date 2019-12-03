@@ -38,10 +38,9 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/activityButtonOfSettings"
+            android:id="@+id/buttonStartWeatherSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="intentSettingsOfApp"
             android:text="@string/settings"
             android:visibility="invisible"
             />
