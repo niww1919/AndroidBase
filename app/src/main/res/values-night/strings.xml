@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="temperature">+10C</string>
+    <string name="temperatureOfDay">+10C</string>
 </resources>
