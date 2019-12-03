@@ -36,6 +36,8 @@ public class MainActivity extends BaseActivity {
 
 
 
+
+
         findViewById(R.id.buttonStartWeatherSettings).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +83,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+//        ((ImageView)findViewById(R.id.imageViewOfDay)).setVisibility(WeatherSettinsModel.getInstance().isShowPicture());
+//        findViewById(R.id.imageViewOfDay).setVisibility(View.INVISIBLE);//todo set image visible
 
         ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
         //todo почему нужно делать каст чтобы установть текст
