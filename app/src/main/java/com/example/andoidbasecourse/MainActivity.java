@@ -33,6 +33,11 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
 
+        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
+        //todo почему нужно делать каст чтобы установть текст
+
+
+
         findViewById(R.id.buttonStartWeatherSettings).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
