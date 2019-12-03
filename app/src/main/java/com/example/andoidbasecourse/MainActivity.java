@@ -1,12 +1,14 @@
 package com.example.andoidbasecourse;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,13 +19,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends BaseActivity {
 
     private static final int SETTING_CODE = 88;
     public static final int REQUEST_CODE = 7;
+    Switch aSwitch;
+    public String TAG = "StartActivity";
+    TextView tvTestOKHttp;
+
 
 
     @Override
@@ -33,17 +44,18 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
 
+//        try {
+//            getApiOkHttpClient();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        tvTestOKHttp = findViewById(R.id.tvTestOKHttp);
+        OkHttpHandler okHttpHandler = new OkHttpHandler();
+        okHttpHandler.execute("https://ya.ru");
 
 
 
-
-
-        findViewById(R.id.buttonStartWeatherSettings).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intentSettingsOfWeather();
-            }
-        });
+//        testOkHttpClient("http://openweathermap.org/", tvTestOKHttp);
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -80,19 +92,46 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-//        ((ImageView)findViewById(R.id.imageViewOfDay)).setVisibility(WeatherSettinsModel.getInstance().isShowPicture());
-//        findViewById(R.id.imageViewOfDay).setVisibility(View.INVISIBLE);//todo set image visible
+    private void testOkHttpClient(String url, TextView textView) {
+        OkHttpClient client = new OkHttpClient();
+//        String run(String url)  throw
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
 
-        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
-        //todo почему нужно делать каст чтобы установть текст
+        try {
+            Response response = client.newCall(request).execute();
+            String string = response.body().string();
+            textView.setText(string);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
-    public void intentSettingsOfWeather() {
-        Intent intent = new Intent(MainActivity.this, WeatherSettingsActivity.class);
+
+//    private void getApiOkHttpClient() throws IOException {
+//        OkHttpClient client = new OkHttpClient();
+//
+//        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+//        RequestBody body = RequestBody.create(mediaType, "inboundDate=2019-09-10&cabinClass=business&children=0&infants=0&country=US&currency=RUB&locale=en-US&originPlace=SFO-sky&destinationPlace=LHR-sky&outboundDate=2019-09-01&adults=1");
+//        DownloadManager.Request request = null;
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+//            request = new TextClassification.Request.Builder()
+//                    .url("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0")
+//                    .post(body)
+//                    .addHeader("x-rapidapi-host", "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com")
+//                    .addHeader("x-rapidapi-key", "3e0b779392msh8c61556a7d29d67p13768fjsnf2b54a679739")
+//                    .addHeader("content-type", "application/x-www-form-urlencoded")
+//                    .build();
+//        }
+//
+//        Response response = client.newCall(request).execute();
+//    }
+
+    public void intentSettingsOfApp(View view) {
+        Intent intent = new Intent(this, WeatherSettingsActivity.class);
         startActivityForResult(intent, SETTING_CODE);
     }
 
@@ -103,13 +142,10 @@ public class MainActivity extends BaseActivity {
             recreate();
         }
 
-
         if (requestCode != REQUEST_CODE) {
             return;
         }
         ((TextView) findViewById(R.id.currentCityName)).setText(data.getStringExtra("City"));
-
-
     }
 
     @Override
@@ -167,4 +203,31 @@ public class MainActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public class OkHttpHandler extends AsyncTask {
+        OkHttpClient client = new OkHttpClient();
+
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+
+            Request.Builder builder = new Request.Builder();
+            builder.url(String.valueOf(objects[0]));
+            Request request = builder.build();
+
+            try {
+                Response response = client.newCall(request).execute();
+                return response.body().string();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+            tvTestOKHttp.setText(String.valueOf(o));
+        }
+
+    }
 }
