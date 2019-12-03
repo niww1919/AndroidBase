@@ -1,5 +1,6 @@
 package com.example.andoidbasecourse;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -16,6 +17,7 @@ public class WeatherSettingsActivity extends BaseActivity {
 
     public static final int RESULT_OK = 1;
     public static final String YOUR_LOCATION = "Your location";
+    public static final String CITY_NAME = "City Name";
     TextView textView;
     ListView listView;
     LinearLayout linearLayout;
@@ -43,8 +45,9 @@ public class WeatherSettingsActivity extends BaseActivity {
         clickOnBackButton();
 
         etYourLocation = findViewById(R.id.etYourLocation);
-        etYourLocation.setText(WeatherSettinsModel.getInstance().getYourLocation());
-        restoreetYourLocation(savedInstanceState );
+//        etYourLocation.setText("New York");
+//        etYourLocation.setText(WeatherSettingsModel.getInstance().getYourLocation());
+//        restoreetYourLocation(savedInstanceState );
 
     }
 
@@ -61,7 +64,7 @@ public class WeatherSettingsActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 //todo save data in singleton
-//                WeatherSettinsModel.getInstance().setYourLocation(etYourLocation.getText().toString());
+//                WeatherSettingsModel.getInstance().setYourLocation(etYourLocation.getText().toString());
 
                 returnResult();
             }
@@ -69,6 +72,11 @@ public class WeatherSettingsActivity extends BaseActivity {
     }
 
     public void returnResult() {
+        Intent intent = new Intent();
+        intent.putExtra(CITY_NAME, etYourLocation.getText().toString());
+        setResult(RESULT_OK,intent);
+
+
         finish();
 
     }

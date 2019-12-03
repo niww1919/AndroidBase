@@ -3,15 +3,15 @@ package com.example.andoidbasecourse;
 /**
  * Realize  Singleton
  */
-public class WeatherSettinsModel {
+public class WeatherSettingsModel {
     String yourLocation = "London";
     boolean showPicture = true;
 
-    private static WeatherSettinsModel instance;
+    private static WeatherSettingsModel instance;
 
-    public static WeatherSettinsModel getInstance() {
+    public static WeatherSettingsModel getInstance() {
 
-        instance = instance == null ? new WeatherSettinsModel() : instance;
+        instance = instance == null ? new WeatherSettingsModel() : instance;
         return instance;
 
     }

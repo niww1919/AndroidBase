@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity {
 
     private static final int SETTING_CODE = 88;
     public static final int REQUEST_CODE = 7;
+    public static final String CITY_NAME = "City Name";
 
 
     @Override
@@ -32,16 +33,10 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
-
-
-
         findViewById(R.id.buttonStartWeatherSettings).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intentSettingsOfWeather();
+                startIntentSettingsOfWeather();
             }
         });
 
@@ -83,26 +78,25 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        ((ImageView)findViewById(R.id.imageViewOfDay)).setVisibility(WeatherSettinsModel.getInstance().isShowPicture());
+//        ((ImageView)findViewById(R.id.imageViewOfDay)).setVisibility(WeatherSettingsModel.getInstance().isShowPicture());
 //        findViewById(R.id.imageViewOfDay).setVisibility(View.INVISIBLE);//todo set image visible
 
-//        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
+//        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettingsModel.getInstance().getYourLocation());
         //todo почему нужно делать каст чтобы установть текст
 
     }
 
-    public void intentSettingsOfWeather() {
-        Intent intent = new Intent(MainActivity.this, WeatherSettingsActivity.class);
-        startActivityForResult(intent, SETTING_CODE);
+    public void startIntentSettingsOfWeather() {
+
+        startActivityForResult(new Intent(this, WeatherSettingsActivity.class), REQUEST_CODE);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode != REQUEST_CODE) return;
-//        ((TextView) findViewById(R.id.currentCityName)).setText(data.getStringExtra("City"));
-        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
+//        if (requestCode != REQUEST_CODE || resultCode != RESULT_OK) return;
+        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(data.getStringExtra(CITY_NAME));
 
 
     }
