@@ -86,7 +86,7 @@ public class MainActivity extends BaseActivity {
 //        ((ImageView)findViewById(R.id.imageViewOfDay)).setVisibility(WeatherSettinsModel.getInstance().isShowPicture());
 //        findViewById(R.id.imageViewOfDay).setVisibility(View.INVISIBLE);//todo set image visible
 
-        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
+//        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
         //todo почему нужно делать каст чтобы установть текст
 
     }
@@ -99,15 +99,10 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == SETTING_CODE) {
-            recreate();
-        }
 
-
-        if (requestCode != REQUEST_CODE) {
-            return;
-        }
-        ((TextView) findViewById(R.id.currentCityName)).setText(data.getStringExtra("City"));
+        if (requestCode != REQUEST_CODE) return;
+//        ((TextView) findViewById(R.id.currentCityName)).setText(data.getStringExtra("City"));
+        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
 
 
     }

@@ -61,7 +61,7 @@ public class WeatherSettingsActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 //todo save data in singleton
-                WeatherSettinsModel.getInstance().setYourLocation(etYourLocation.getText().toString());
+//                WeatherSettinsModel.getInstance().setYourLocation(etYourLocation.getText().toString());
 
                 returnResult();
             }
