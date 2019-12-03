@@ -3,13 +3,14 @@ package com.example.andoidbasecourse;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SwitchCompat;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 public class WeatherSettingsActivity extends BaseActivity {
 
@@ -20,7 +21,7 @@ public class WeatherSettingsActivity extends BaseActivity {
     LinearLayout linearLayout;
     SwitchCompat aSwitchSetDarkTheme;
     String city;
-    EditText etYourLocation;
+    TextInputEditText etYourLocation;
 
 
 
