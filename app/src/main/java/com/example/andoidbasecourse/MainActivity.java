@@ -33,8 +33,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
 
-        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
-        //todo почему нужно делать каст чтобы установть текст
 
 
 
@@ -77,6 +75,15 @@ public class MainActivity extends BaseActivity {
         WeatherAdapter adapter = new WeatherAdapter(this, weatherOFWeekDays);
         recyclerView.setAdapter(adapter);
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        ((TextView)findViewById(R.id.yourCurrentLocation)).setText(WeatherSettinsModel.getInstance().getYourLocation());
+        //todo почему нужно делать каст чтобы установть текст
 
     }
 

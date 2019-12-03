@@ -46,10 +46,6 @@ public class WeatherSettingsActivity extends BaseActivity {
         etYourLocation.setText(WeatherSettinsModel.getInstance().getYourLocation());
         restoreetYourLocation(savedInstanceState );
 
-
-
-
-
     }
 
     private void restoreetYourLocation(Bundle savedInstanceState) {
@@ -83,4 +79,5 @@ public class WeatherSettingsActivity extends BaseActivity {
         outState.putString(YOUR_LOCATION,etYourLocation.getText().toString());
 
     }
+
 }
